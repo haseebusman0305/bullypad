@@ -1,29 +1,94 @@
-import React from "react";
-
+import React from 'react';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import TokenIcon from '@mui/icons-material/Token';
+import LockIcon from '@mui/icons-material/Lock';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 const HomePage = () => {
     return (
-        <div className="flex">
+        <section className="flex flex-col py-8  px-8">
+            <h1 className="px-1 py-7 font-bold text-4xl ">
+                DASHBOARD
+            </h1>
+            <div className='flex flex-row gap-4'>
+                <div className="flex flex-row gap-6 bg-[#141414]  min-h-[28rem] w-[65%] rounded-2xl p-6">
+                    <div className="flex flex-col w-full">
+                        <div className="flex flex-row justify-between items-center ">
+                            <div className="flex flex-row justify-start items-center gap-2">
+                                <img className="w-10 h-auto mx-2" src="logo_bull.png" alt="" />
+                                <h2 className="text-md font-bold">
+                                    BULLY
+                                </h2>
+                            </div>
+                            <div className="flex flex-row items-center gap-2">
+                                <h2 className="text-lg">
+                                    Buy BULLY on
+                                </h2>
+                                <button className="flex flex-row text-sm items-center gap-2 bg-[#272727] p-2 rounded-3xl ">
+                                    <img className="w-6 h-auto" src="pancake.png" alt="pancake" />
+                                    Raydium
+                                </button>
+                                <button className="flex flex-row text-sm items-center gap-2 bg-[#272727] p-2 !rounded-3xl ">
+                                    <img className="w-7 h-auto" src="jupiter.png" alt="pancake" />
+                                    Jupiter
+                                </button>
+                            </div>
+                        </div>
+                        <div className='w-[100%] mb-7'>
+                            <img className='w-full h-auto ' src="/trading.png" alt="" />
+                        </div>
+                        <div className='flex flex-row justify-between px-3 '>
 
-        <div className="flex-1">
-            <div className=" overflow-y-auto">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius, voluptates minima veritatis sequi maxime reiciendis. Corporis minima a maiores nam voluptatum totam blanditiis dolorum voluptatibus iste doloribus omnis eveniet eos quod delectus veniam suscipit ipsa deleniti quis illum deserunt tenetur laborum, molestias illo reiciendis! Quae, voluptates sint quasi asperiores nostrum inventore! Eius modi iure eos ab itaque nulla quasi autem corrupti commodi officia necessitatibus quos perspiciatis a magnam qui, repellendus molestiae nobis saepe laborum omnis sed dicta voluptatibus. Doloribus neque nesciunt atque voluptas delectus illum sunt animi. Veritatis eum enim nobis dolorum consequuntur soluta at. Placeat officia maxime unde voluptas harum quia, ipsum iusto laborum numquam culpa esse veritatis ex facilis, ea fuga velit beatae! Quisquam quis vero sit dicta voluptate tenetur, debitis iusto neque, autem, ullam soluta quia. Ullam repudiandae corporis numquam voluptate. Nisi at corporis provident odit nam cumque aliquam consequatur, laborum, veritatis tempore voluptatum quod! Eos aut sunt eligendi nesciunt ut laudantium consectetur? Aliquid voluptatibus minus vel sequi est neque odio quidem. Optio ad fugiat architecto vitae consequatur, perferendis sequi doloribus laboriosam impedit earum. Neque optio officiis eveniet quasi. Odio praesentium aspernatur illum, quasi dolorum dolorem dicta illo quaerat obcaecati dolores ex accusamus, autem quam nam quidem sit voluptatem nobis unde magnam repellat reprehenderit quibusdam ipsa atque recusandae. Quaerat, necessitatibus natus officiis quis magni optio porro ullam nihil vel ipsam voluptatibus vero veritatis in ipsum fuga iusto atque aut qui eaque iste odit repellat! Consequatur voluptatibus quisquam tempora fuga aliquam. Delectus doloribus ex non quasi sed porro laboriosam, quis dolor nulla tenetur omnis quidem mollitia aspernatur harum vero possimus, dignissimos perspiciatis illum tempora? Ratione fugiat voluptates voluptatum autem, aut laudantium labore veniam nihil enim eligendi molestias nostrum nemo fugit neque repellendus cumque tenetur, officiis corporis nisi cupiditate praesentium sequi? Qui nam quibusdam autem quisquam consectetur dolore nemo pariatur natus veniam magni laborum voluptatum accusantium ratione aliquid ex voluptatem at, tempore nostrum sint ipsa? Quam tempore saepe tempora, quae praesentium officiis nihil sequi similique atque error alias vitae explicabo nam suscipit repellat autem facere sed, delectus enim! Cupiditate praesentium possimus expedita alias rem! Nisi ea corrupti incidunt aspernatur! Nobis, cupiditate consectetur excepturi sapiente adipisci earum dolor ut incidunt esse! Rerum reprehenderit quasi velit enim dolores, quae asperiores tempora ut perspiciatis dolorem odio necessitatibus corporis quod saepe facilis autem ratione doloremque perferendis! Quos dolorem porro officia fuga rem eligendi nisi quisquam voluptatibus, impedit culpa id asperiores, dicta cumque.
-                </p>
+                            <button className="flex flex-row text-sm items-center border-2 border-custom-gradient gap-2 bg-[#272727] p-2 rounded-3xl ">
+                                BULLY|0.0000234$
+                            </button>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius, voluptates minima veritatis sequi maxime reiciendis. Corporis minima a maiores nam voluptatum totam blanditiis dolorum voluptatibus iste doloribus omnis eveniet eos quod delectus veniam suscipit ipsa deleniti quis illum deserunt tenetur laborum, molestias illo reiciendis! Quae, voluptates sint quasi asperiores nostrum inventore! Eius modi iure eos ab itaque nulla quasi autem corrupti commodi officia necessitatibus quos perspiciatis a magnam qui, repellendus molestiae nobis saepe laborum omnis sed dicta voluptatibus. Doloribus neque nesciunt atque voluptas delectus illum sunt animi. Veritatis eum enim nobis dolorum consequuntur soluta at. Placeat officia maxime unde voluptas harum quia, ipsum iusto laborum numquam culpa esse veritatis ex facilis, ea fuga velit beatae! Quisquam quis vero sit dicta voluptate tenetur, debitis iusto neque, autem, ullam soluta quia. Ullam repudiandae corporis numquam voluptate. Nisi at corporis provident odit nam cumque aliquam consequatur, laborum, veritatis tempore voluptatum quod! Eos aut sunt eligendi nesciunt ut laudantium consectetur? Aliquid voluptatibus minus vel sequi est neque odio quidem. Optio ad fugiat architecto vitae consequatur, perferendis sequi doloribus laboriosam impedit earum. Neque optio officiis eveniet quasi. Odio praesentium aspernatur illum, quasi dolorum dolorem dicta illo quaerat obcaecati dolores ex accusamus, autem quam nam quidem sit voluptatem nobis unde magnam repellat reprehenderit quibusdam ipsa atque recusandae. Quaerat, necessitatibus natus officiis quis magni optio porro ullam nihil vel ipsam voluptatibus vero veritatis in ipsum fuga iusto atque aut qui eaque iste odit repellat! Consequatur voluptatibus quisquam tempora fuga aliquam. Delectus doloribus ex non quasi sed porro laboriosam, quis dolor nulla tenetur omnis quidem mollitia aspernatur harum vero possimus, dignissimos perspiciatis illum tempora? Ratione fugiat voluptates voluptatum autem, aut laudantium labore veniam nihil enim eligendi molestias nostrum nemo fugit neque repellendus cumque tenetur, officiis corporis nisi cupiditate praesentium sequi? Qui nam quibusdam autem quisquam consectetur dolore nemo pariatur natus veniam magni laborum voluptatum accusantium ratione aliquid ex voluptatem at, tempore nostrum sint ipsa? Quam tempore saepe tempora, quae praesentium officiis nihil sequi similique atque error alias vitae explicabo nam suscipit repellat autem facere sed, delectus enim! Cupiditate praesentium possimus expedita alias rem! Nisi ea corrupti incidunt aspernatur! Nobis, cupiditate consectetur excepturi sapiente adipisci earum dolor ut incidunt esse! Rerum reprehenderit quasi velit enim dolores, quae asperiores tempora ut perspiciatis dolorem odio necessitatibus corporis quod saepe facilis autem ratione doloremque perferendis! Quos dolorem porro officia fuga rem eligendi nisi quisquam voluptatibus, impedit culpa id asperiores, dicta cumque.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius, voluptates minima veritatis sequi maxime reiciendis. Corporis minima a maiores nam voluptatum totam blanditiis dolorum voluptatibus iste doloribus omnis eveniet eos quod delectus veniam suscipit ipsa deleniti quis illum deserunt tenetur laborum, molestias illo reiciendis! Quae, voluptates sint quasi asperiores nostrum inventore! Eius modi iure eos ab itaque nulla quasi autem corrupti commodi officia necessitatibus quos perspiciatis a magnam qui, repellendus molestiae nobis saepe laborum omnis sed dicta voluptatibus. Doloribus neque nesciunt atque voluptas delectus illum sunt animi. Veritatis eum enim nobis dolorum consequuntur soluta at. Placeat officia maxime unde voluptas harum quia, ipsum iusto laborum numquam culpa esse veritatis ex facilis, ea fuga velit beatae! Quisquam quis vero sit dicta voluptate tenetur, debitis iusto neque, autem, ullam soluta quia. Ullam repudiandae corporis numquam voluptate. Nisi at corporis provident odit nam cumque aliquam consequatur, laborum, veritatis tempore voluptatum quod! Eos aut sunt eligendi nesciunt ut laudantium consectetur? Aliquid voluptatibus minus vel sequi est neque odio quidem. Optio ad fugiat architecto vitae consequatur, perferendis sequi doloribus laboriosam impedit earum. Neque optio officiis eveniet quasi. Odio praesentium aspernatur illum, quasi dolorum dolorem dicta illo quaerat obcaecati dolores ex accusamus, autem quam nam quidem sit voluptatem nobis unde magnam repellat reprehenderit quibusdam ipsa atque recusandae. Quaerat, necessitatibus natus officiis quis magni optio porro ullam nihil vel ipsam voluptatibus vero veritatis in ipsum fuga iusto atque aut qui eaque iste odit repellat! Consequatur voluptatibus quisquam tempora fuga aliquam. Delectus doloribus ex non quasi sed porro laboriosam, quis dolor nulla tenetur omnis quidem mollitia aspernatur harum vero possimus, dignissimos perspiciatis illum tempora? Ratione fugiat voluptates voluptatum autem, aut laudantium labore veniam nihil enim eligendi molestias nostrum nemo fugit neque repellendus cumque tenetur, officiis corporis nisi cupiditate praesentium sequi? Qui nam quibusdam autem quisquam consectetur dolore nemo pariatur natus veniam magni laborum voluptatum accusantium ratione aliquid ex voluptatem at, tempore nostrum sint ipsa? Quam tempore saepe tempora, quae praesentium officiis nihil sequi similique atque error alias vitae explicabo nam suscipit repellat autem facere sed, delectus enim! Cupiditate praesentium possimus expedita alias rem! Nisi ea corrupti incidunt aspernatur! Nobis, cupiditate consectetur excepturi sapiente adipisci earum dolor ut incidunt esse! Rerum reprehenderit quasi velit enim dolores, quae asperiores tempora ut perspiciatis dolorem odio necessitatibus corporis quod saepe facilis autem ratione doloremque perferendis! Quos dolorem porro officia fuga rem eligendi nisi quisquam voluptatibus, impedit culpa id asperiores, dicta cumque.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius, voluptates minima veritatis sequi maxime reiciendis. Corporis minima a maiores nam voluptatum totam blanditiis dolorum voluptatibus iste doloribus omnis eveniet eos quod delectus veniam suscipit ipsa deleniti quis illum deserunt tenetur laborum, molestias illo reiciendis! Quae, voluptates sint quasi asperiores nostrum inventore! Eius modi iure eos ab itaque nulla quasi autem corrupti commodi officia necessitatibus quos perspiciatis a magnam qui, repellendus molestiae nobis saepe laborum omnis sed dicta voluptatibus. Doloribus neque nesciunt atque voluptas delectus illum sunt animi. Veritatis eum enim nobis dolorum consequuntur soluta at. Placeat officia maxime unde voluptas harum quia, ipsum iusto laborum numquam culpa esse veritatis ex facilis, ea fuga velit beatae! Quisquam quis vero sit dicta voluptate tenetur, debitis iusto neque, autem, ullam soluta quia. Ullam repudiandae corporis numquam voluptate. Nisi at corporis provident odit nam cumque aliquam consequatur, laborum, veritatis tempore voluptatum quod! Eos aut sunt eligendi nesciunt ut laudantium consectetur? Aliquid voluptatibus minus vel sequi est neque odio quidem. Optio ad fugiat architecto vitae consequatur, perferendis sequi doloribus laboriosam impedit earum. Neque optio officiis eveniet quasi. Odio praesentium aspernatur illum, quasi dolorum dolorem dicta illo quaerat obcaecati dolores ex accusamus, autem quam nam quidem sit voluptatem nobis unde magnam repellat reprehenderit quibusdam ipsa atque recusandae. Quaerat, necessitatibus natus officiis quis magni optio porro ullam nihil vel ipsam voluptatibus vero veritatis in ipsum fuga iusto atque aut qui eaque iste odit repellat! Consequatur voluptatibus quisquam tempora fuga aliquam. Delectus doloribus ex non quasi sed porro laboriosam, quis dolor nulla tenetur omnis quidem mollitia aspernatur harum vero possimus, dignissimos perspiciatis illum tempora? Ratione fugiat voluptates voluptatum autem, aut laudantium labore veniam nihil enim eligendi molestias nostrum nemo fugit neque repellendus cumque tenetur, officiis corporis nisi cupiditate praesentium sequi? Qui nam quibusdam autem quisquam consectetur dolore nemo pariatur natus veniam magni laborum voluptatum accusantium ratione aliquid ex voluptatem at, tempore nostrum sint ipsa? Quam tempore saepe tempora, quae praesentium officiis nihil sequi similique atque error alias vitae explicabo nam suscipit repellat autem facere sed, delectus enim! Cupiditate praesentium possimus expedita alias rem! Nisi ea corrupti incidunt aspernatur! Nobis, cupiditate consectetur excepturi sapiente adipisci earum dolor ut incidunt esse! Rerum reprehenderit quasi velit enim dolores, quae asperiores tempora ut perspiciatis dolorem odio necessitatibus corporis quod saepe facilis autem ratione doloremque perferendis! Quos dolorem porro officia fuga rem eligendi nisi quisquam voluptatibus, impedit culpa id asperiores, dicta cumque.
-                </p>
-                
+                            <span className='text-lg'>
+                                Charts by TradingView
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div className='flex flex-col gap-5  w-[33%] mt-0  '>
+                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                        <RocketLaunchIcon sx={{fontSize:'1.8rem'}} />
+                        <h1 className='text-lg font-bold'>
+                            New Launches
+                        </h1>
+                    </button>
+                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                        <TokenIcon sx={{fontSize:'1.8rem'}} />
+                        <h1 className='text-lg font-bold'>
+                        Token Minter
+                        </h1>
+                    </button>
+                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                        <LockIcon sx={{fontSize:'1.8rem'}} />
+                        <h1 className='text-lg font-bold'>
+                        Token Locker 
+                        <span className='text-[12px]'>
+                          (Coming Soon)
+                            </span>
+                        </h1>
+                    </button>
+                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                        <VpnKeyIcon sx={{fontSize:'1.8rem'}} />
+                        <h1 className='text-lg font-bold'>
+                        Liquidity Locker
+                        </h1>
+                    </button>
+                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                        <AddBoxOutlinedIcon sx={{fontSize:'1.8rem'}} />
+                        <h1 className='text-lg font-bold'>
+                        Create Launches
+                        </h1>
+                    </button>
+
+                </div>
             </div>
-        </div>
-        </div>
+        </section>
     );
-    }
+}
 
 export default HomePage;

@@ -1,31 +1,33 @@
-  import React, { useState } from 'react';
-  import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-  import HomePage from './pages/HomePage';
-  import Sidebar from './common/Sidebar';
-  import Navigation from './common/Navigation';
-  import Navbar from './common/Navbar';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Sidebar from './common/Sidebar';
+import Navigation from './common/Navigation';
+import Navbar from './common/Navbar';
+import Footer from './common/Footer';
 
-  function App() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-    const toggleSidebar = () => {
-      setIsSidebarOpen(!isSidebarOpen);
-    };
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
-    return (
-      <Router>
-        <div className="flex flex-wrap">
-          <Sidebar/>  
-          <Navigation isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-          <div className={`flex-1 bg-customGray text-white transition-all duration-300`}>
-            <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-            </Routes>
-          </div>
+  return (
+    <Router>
+      <div className="flex flex-wrap ">
+        <Sidebar />
+        <Navigation isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className={`flex-1 bg-customGray text-white transition-all duration-300`}>
+          <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+          <Footer />
         </div>
-      </Router>
-    );
-  }
+      </div>
+    </Router>
+  );
+}
 
-  export default App;
+export default App;

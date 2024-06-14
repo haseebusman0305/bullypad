@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = ({ isSidebarOpen, toggleSidebar }) => {
   return (
-    <div className={`sticky top-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-600 h-screen`}>
+    <div className={`sticky top-0 bg-[#0f0f0f] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen`}>
       {isSidebarOpen && (
         <>
           <button 

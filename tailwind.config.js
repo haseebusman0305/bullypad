@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  important: true,
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -12,20 +13,17 @@ export default {
       colors: {
         customGray: 'var(--Gray-24, #0A0A0A)',
       },
-      // Adding custom utilities for text gradient
-      textFillColor: theme => theme('colors'),
-      backgroundClip: {
-        text: 'text',
-      },
     },
   },
   plugins: [
-    // Plugin for text fill color
     function({ addUtilities, theme }) {
-      addUtilities({
-        '.text-fill-transparent': { '-webkit-text-fill-color': 'transparent' },
-        '.bg-clip-text': { 'background-clip': 'text' },
-      });
+      const newUtilities = {
+        '.border-custom-gradient': {
+          'border-image': `${theme('backgroundImage.custom-gradient')} 1`,
+          
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
     },
   ],
 }

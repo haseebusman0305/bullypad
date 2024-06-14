@@ -18,7 +18,7 @@ const Sidebar = () => {
   });
 
   return (
-    <div className="w-20 sticky top-0 bg-[#121212] h-screen flex flex-col items-center border-r border-zinc-600">
+    <div className="w-20 sticky top-0 bg-[#0f0f0f] h-screen flex flex-col items-center border-r border-zinc-800">
       <svg width="0" height="0">
         <linearGradient id="customGradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#d16ba5" />
