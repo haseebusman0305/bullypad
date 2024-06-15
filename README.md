@@ -26,8 +26,6 @@ To get a local copy up and running follow these simple steps.
    ```sh
    git clone https://github.com/haseebusman0305/bullypad.git
    cd bullypad
-
-   ```sh
    Install npm dependencies
    npm install
 Start the Vite development server:
