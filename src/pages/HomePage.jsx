@@ -4,6 +4,7 @@ import TokenIcon from '@mui/icons-material/Token';
 import LockIcon from '@mui/icons-material/Lock';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import '../App.css';
 const HomePage = () => {
     return (
         <section className="flex flex-col py-8  px-8">
@@ -39,11 +40,11 @@ const HomePage = () => {
                         </div>
                         <div className='flex flex-row justify-between px-3 '>
 
-                            <button className="flex flex-row text-sm items-center border-2 border-custom-gradient gap-2 bg-[#272727] p-2 rounded-3xl ">
+                            <button className="flex flex-row text-sm items-center gradientborder   gap-2 bg-[#272727] p-2 rounded-3xl ">
                                 BULLY|0.0000234$
                             </button>
 
-                            <span className='text-lg'>
+                            <span className='text-[1rem]'>
                                 Charts by TradingView
                             </span>
                         </div>

@@ -19,6 +19,12 @@
     "react-router-dom": "^6.23.1",
     "react-tradingview-widget": "^1.3.2"
   },
+"overrides": {
+  "react-tradingview-widget": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+},
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
