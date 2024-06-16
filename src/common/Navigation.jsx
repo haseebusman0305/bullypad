@@ -4,16 +4,16 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import GradientIcon from './Gradient'; 
 import Rotate90DegreesCwOutlinedIcon from '@mui/icons-material/Rotate90DegreesCwOutlined';
 import SyncLockOutlinedIcon from '@mui/icons-material/SyncLockOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
 import ControlPointDuplicateOutlinedIcon from '@mui/icons-material/ControlPointDuplicateOutlined';
 import TokenOutlinedIcon from '@mui/icons-material/TokenOutlined';
+
 const navLinks = {
   '/': [
-    { path: '/', label: 'Dashboard', heading: 'General', icon: <DashboardIcon />, activeIcon: <GradientIcon icon={DashboardIcon} /> },
+    { path: '/', label: 'Dashboard', heading: 'General', icon: <DashboardIcon /> },
     { path: '/account', label: 'Account', disabled: true, heading: 'General', icon: <AccountCircleIcon /> },
     { path: '/eligibility', label: 'Eligibility', disabled: true, heading: 'General', icon: <CheckCircleIcon /> },
     { path: '/whitelisted', label: 'Whitelisted', disabled: true, heading: 'General', icon: <FormatListBulletedIcon /> },
@@ -21,20 +21,28 @@ const navLinks = {
   '/launches': [
     { path: '/token', label: 'Tokens', disabled: true, heading: 'Browser', icon: <TokenOutlinedIcon /> },
     { path: '/pairs', label: 'Pairs', disabled: true, heading: 'Browser', icon: <ControlPointDuplicateOutlinedIcon /> },
-    { path: '/launches', label: 'Launch', heading: 'Browser', icon: <RocketLaunchOutlinedIcon />, activeIcon: <GradientIcon icon={RocketLaunchOutlinedIcon} /> },
+    { path: '/launches', label: 'Launch', heading: 'Browser', icon: <RocketLaunchOutlinedIcon /> },
   ],
   '/services': [
-    { path: '/services/minter', label: 'Token Minter', heading: 'Services', icon: <Rotate90DegreesCwOutlinedIcon />, activeIcon: <GradientIcon icon={Rotate90DegreesCwOutlinedIcon} /> },
-    { path: '/services/locker', label: 'Token Locker', disabled: true, heading: 'Services', icon: <SyncLockOutlinedIcon />, activeIcon: <GradientIcon icon={SyncLockOutlinedIcon} /> },
-    { path: '/services/liquidity', label: 'Liquidity Locker', heading: 'Services', icon: <VpnKeyOutlinedIcon />, activeIcon: <GradientIcon icon={VpnKeyOutlinedIcon} /> },
-    { path: '/services/ilo', label: 'Create ILO', heading: 'Services', icon: <DashboardIcon />, activeIcon: <GradientIcon icon={DashboardIcon} /> },
+    { path: '/services/minter', label: 'Token Minter', heading: 'Services', icon: <Rotate90DegreesCwOutlinedIcon /> },
+    { path: '/services/locker', label: 'Token Locker', disabled: true, heading: 'Services', icon: <SyncLockOutlinedIcon /> },
+    { path: '/services/liquidity', label: 'Liquidity Locker', heading: 'Services', icon: <VpnKeyOutlinedIcon /> },
+    { path: '/services/ilo', label: 'Create ILO', heading: 'Services', icon: <DashboardIcon /> },
   ],
   'default': [
-    { path: '/', label: 'Dashboard', heading: 'General', icon: <DashboardIcon />, activeIcon: <GradientIcon icon={DashboardIcon} /> },
+    { path: '/', label: 'Dashboard', heading: 'General', icon: <DashboardIcon /> },
     { path: '/account', label: 'Account', disabled: true, heading: 'General', icon: <AccountCircleIcon /> },
     { path: '/eligibility', label: 'Eligibility', disabled: true, heading: 'General', icon: <CheckCircleIcon /> },
     { path: '/whitelisted', label: 'Whitelisted', disabled: true, heading: 'General', icon: <FormatListBulletedIcon /> },
   ],
+};
+
+const applyGradientFill = (icon, isActive) => {
+  return React.cloneElement(icon, {
+    sx: {
+      fill: isActive ? 'url(#customGradient)' : '',
+    },
+  });
 };
 
 const Navigation = ({ isSidebarOpen }) => {
@@ -72,7 +80,7 @@ const Navigation = ({ isSidebarOpen }) => {
                     onMouseEnter={() => setHoveredLink(link.path)}
                     onMouseLeave={() => setHoveredLink(null)}
                   >
-                    {link.path === currentPath || link.path === hoveredLink ? link.activeIcon : link.icon}
+                    {applyGradientFill(link.icon, link.path === currentPath || link.path === hoveredLink)}
                     <span className='pl-2 text-sm font-bold'>
                       {link.label}
                       {link.disabled && (

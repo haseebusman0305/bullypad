@@ -1,20 +1,11 @@
 import React from 'react';
-import GradientIcon from './Gradient.jsx'
 import XIcon from '@mui/icons-material/X';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { NavLink } from 'react-router-dom';
-
-import GamesIcon from '@mui/icons-material/Games';
 import NoteIcon from '@mui/icons-material/Note';
 
-const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
+const Navbar = () => {
   return (
-    // <div className="bg-customGray text-white p-4 flex justify-between items-center">
-    //   <button onClick={toggleSidebar} className="text-white">
-    //     {isSidebarOpen ? 'Close Sidebar' : 'Open Sidebar'}
-    //   </button>
-    //   <div>
-    // <GradientIcon icon={GamesIcon} size={32} />
     <nav className="h-20 items-center flex px-6 my-3 py-2 justify-between">
       <section className='flex flex-row gap-6 items-start '>
         <NavLink to="https://x.com">
@@ -23,7 +14,7 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
           }} />
         </NavLink>
         <NavLink to="https://telegram.com">
-          <TelegramIcon sx={{
+          <TelegramIcon className='hover:text-blue-400 hover:transition hover:duration-200' sx={{
             fontSize: 20,
           }} /></NavLink>
         <NavLink to="https://bullypad.gitbook.io/">

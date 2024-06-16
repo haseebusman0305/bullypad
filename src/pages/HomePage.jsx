@@ -16,7 +16,7 @@ const HomePage = () => {
                     <div className="flex flex-col w-full">
                         <div className="flex flex-row justify-between items-center ">
                             <div className="flex flex-row justify-start items-center gap-2">
-                                <img className="w-10 h-auto mx-2" src="logo_bull.png" alt="" />
+                                <img className="w-10 h-auto mx-2" src="/logo_bull.png" alt="" />
                                 <h2 className="text-md font-bold">
                                     BULLY
                                 </h2>

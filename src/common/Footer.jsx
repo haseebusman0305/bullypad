@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="flex flex-col pt-8 mt-8 border-t  border-zinc-900 ">
             <div className='flex flex-row justify-between flex-wrap px-[5rem] py-14 border-b  border-zinc-900 '>
                 <Link to='/'>
-                    <img className='w-[2.29169rem] h-auto ' src="logo_bull.png" alt="" />
+                    <img className='w-[2.29169rem] h-auto ' src="/logo_bull.png" alt="" />
                 </Link>
 
                 <div className='flex flex-row gap-[6rem] mr-24'>

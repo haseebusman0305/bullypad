@@ -25,23 +25,13 @@ const Sidebar = ({ toggleSidebar }) => {
 
   return (
     <div className="w-20 sticky top-0 bg-[#121212] h-screen flex flex-col items-center border-r border-zinc-800">
-      <svg width="0" height="0">
-        <linearGradient id="customGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#d16ba5" />
-          <stop offset="16.67%" stopColor="#ba83ca" />
-          <stop offset="33.33%" stopColor="#9a9ae1" />
-          <stop offset="50%" stopColor="#69bff8" />
-          <stop offset="66.67%" stopColor="#52cffe" />
-          <stop offset="100%" stopColor="#5ffbf1" />
-        </linearGradient>
-      </svg>
       <div>
         <button className="text-white p-2 mt-2" onClick={toggleSidebar}>
           <MenuIcon />
         </button>
       </div>
       <NavLink to="/">
-        <img className='w-10 mb-10 mt-3' src="logo_bull.png" alt="Logo" />
+        <img className='w-10 mb-10 mt-3' src="/logo_bull.png" alt="Logo" />
       </NavLink>
 
       <ul className="text-white">
