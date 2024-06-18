@@ -26,11 +26,11 @@ const HomePage = () => {
                                     Buy BULLY on
                                 </h2>
                                 <button className="flex flex-row text-sm items-center gap-2 bg-[#272727] p-2 rounded-3xl ">
-                                    <img className="w-6 h-auto" src="pancake.png" alt="pancake" />
+                                    <img className="w-6 h-auto" src="radium.png" alt="radium" />
                                     Raydium
                                 </button>
                                 <button className="flex flex-row text-sm items-center gap-2 bg-[#272727] p-2 !rounded-3xl ">
-                                    <img className="w-7 h-auto" src="jupiter.png" alt="pancake" />
+                                    <img className="w-7 h-auto" src="jupiter.png" alt="radium" />
                                     Jupiter
                                 </button>
                             </div>

@@ -63,7 +63,7 @@ const Navigation = ({ isSidebarOpen }) => {
   }, {});
 
   return (
-    <div className={`sticky top-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen  py-8`}>
+    <div className={`sticky top-0 z-10 md:z-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen  py-8`}>
       <div className={`transition-opacity duration-200 mx-3 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`}>
         {Object.keys(groupedLinks).map(heading => (
           <div key={heading}>
