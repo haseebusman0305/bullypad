@@ -127,7 +127,7 @@ const Services = () => {
                         </div>
                     ))}
                 </div>
-                <div className="flex flex-wrap -mx-2">
+                <div className="flex flex-wrap -mx-2 mt-8">
                     <div className="w-1/2 px-2 PY-0">
                         <div className="bg-[#141414] rounded-3xl   px-8 py-4">
                             <h3 className='py-1 font-bold text-lg '>
@@ -183,7 +183,7 @@ const Services = () => {
                             />
                             {preview && (
                                 <div>
-                                    <img src={preview} alt="Preview" className='w-full h-auto mt-4 rounded-2xl' />
+                                    <img src={preview} alt="Preview" className='w-full h-auto mt-4 rounded-2xl object-cover' />
                                 </div>
                             )}
                             <div className='-mr-3 ml-3'>
@@ -206,7 +206,7 @@ const Services = () => {
                                     fullWidth
                                 />
                             </div>
-                            <div className='flex flex-row mt-3 gap-4'>
+                            <div className='flex flex-row mt-5 gap-4'>
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor="tax" className='text-sm font-bold '>Buy Tax</label>
                                     <select name="tax" id="tax" className='w-56 h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
@@ -228,7 +228,7 @@ const Services = () => {
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
-                                        <option value="4">4">4</option>
+                                        <option value="4">4</option>
                                         <option value="5">5</option>
                                         <option value="6">6</option>
                                         <option value="7">7</option>
@@ -238,7 +238,7 @@ const Services = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className='flex justify-between mt-4 '>
+                            <div className='flex justify-between mt-7 '>
                                 <div className='flex flex-col items-start gap-2'>
                                     <span className='text-sm text-[#999999]'>
                                         Total supply (including decimals - raw amount)
@@ -257,7 +257,7 @@ const Services = () => {
                                 </div>
                             </div>
                             <button
-                                className={`w-full py-4 flex items-center justify-center rounded-2xl my-4 hover:bg-[#1d1d25] ${isButtonDisabled ? 'bg-[#666666] cursor-not-allowed' : 'bg-custom-gradient'}`}
+                                className={`w-full py-4 flex items-center justify-center rounded-2xl my-4 hover:bg-[#1d1d25] mt-6 ${isButtonDisabled ? 'bg-[#666666] cursor-not-allowed' : 'bg-custom-gradient'}`}
                                 disabled={isButtonDisabled}
                             >
                                 <span className=' font-bold uppercase text-lg '>
