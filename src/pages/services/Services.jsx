@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
 import { TextField, ThemeProvider, createTheme } from '@mui/material';
-import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const theme = createTheme({
     components: {
@@ -47,12 +48,21 @@ const theme = createTheme({
     },
 });
 
-const Items = ['No mint function', 'No owner / admin functions', 'No unsafe code in the token contract itself', 'Fully SPL compliant', 'Fully decentralised']
+const Items = [
+    'No mint function',
+    'No owner / admin functions',
+    'No unsafe code in the token contract itself',
+    'Fully SPL compliant',
+    'Fully decentralised',
+];
 
 const Services = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
+    const [isCheckedLabel, setIsCheckedLabel] = useState(false);
+    const [isCheckedRequired, setIsCheckedRequired] = useState(false);
+    const [isCheckedAdjustable, setIsCheckedAdjustable] = useState(false);
 
     const handleCloseClick = () => setIsVisible(false);
 
@@ -64,6 +74,18 @@ const Services = () => {
 
     const handleUploadClick = () => {
         document.getElementById('fileInput').click();
+    };
+
+    const handleLabelCheckboxChange = (event) => {
+        setIsCheckedLabel(event.target.checked);
+    };
+
+    const handleRequiredCheckboxChange = (event) => {
+        setIsCheckedRequired(event.target.checked);
+    };
+
+    const handleAdjustableCheckboxChange = (event) => {
+        setIsCheckedAdjustable(event.target.checked);
     };
 
     return (
@@ -104,8 +126,7 @@ const Services = () => {
                                 <TextField label="Token Supply" variant="outlined" fullWidth />
                                 <TextField type="number" variant="outlined" fullWidth />
                                 <p className='text-[0.7rem] text-[#999999] -mt-3'>
-                                    Decimals (18 reccomended)
-
+                                    Decimals (18 recommended)
                                 </p>
                             </ThemeProvider>
                             <button
@@ -127,6 +148,28 @@ const Services = () => {
                                     <img src={preview} alt="Preview" className='w-full h-auto mt-4 rounded-2xl' />
                                 </div>
                             )}
+                            <div className='-mr-3 ml-3'>
+                                <FormControlLabel
+                                    control={<Checkbox checked={isCheckedLabel} onChange={handleLabelCheckboxChange} />}
+                                    label="Revoke Freeze"
+                                    className={`w-full bg-[#1F1F1F] rounded-2xl p-2 mt-2 ${isCheckedLabel ? 'gradientborder' : ''}`}
+                                    fullWidth
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox checked={isCheckedRequired} onChange={handleRequiredCheckboxChange} />}
+                                    label="Revoke Mint"
+                                    className={`w-full bg-[#1F1F1F] rounded-2xl p-2 mt-2 ${isCheckedRequired ? 'gradientborder' : ''}`}
+                                    fullWidth
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox checked={isCheckedAdjustable} onChange={handleAdjustableCheckboxChange} />}
+                                    label="Revoke Adjustable Metadata"
+                                    className={`w-full bg-[#1F1F1F] rounded-2xl p-2 mt-2 ${isCheckedAdjustable ? 'gradientborder' : ''}`}
+                                    fullWidth
+                                />
+
+                            </div>
+                            
                         </div>
                     </div>
                     <div className="w-1/2 px-2">
