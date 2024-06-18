@@ -36,7 +36,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/launches" element={<Launches />} />
             <Route path="/services" element={<Services />} />
-            
+            <Route path="services/minter" element={<Services />} />
+
           </Routes>
           <Footer />
         </div>

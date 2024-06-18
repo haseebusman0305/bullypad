@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlineRounded';
 import { TextField, ThemeProvider, createTheme } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import CachedRoundedIcon from '@mui/icons-material/CachedRounded';
 
 const theme = createTheme({
     components: {
@@ -63,6 +64,19 @@ const Services = () => {
     const [isCheckedLabel, setIsCheckedLabel] = useState(false);
     const [isCheckedRequired, setIsCheckedRequired] = useState(false);
     const [isCheckedAdjustable, setIsCheckedAdjustable] = useState(false);
+    const [tokenName, setTokenName] = useState('');
+    const [tokenSymbol, setTokenSymbol] = useState('');
+    const [tokenSupply, setTokenSupply] = useState('');
+    const [decimals, setDecimals] = useState('');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    useEffect(() => {
+        if (tokenName && tokenSymbol && tokenSupply && decimals) {
+            setIsButtonDisabled(false);
+        } else {
+            setIsButtonDisabled(true);
+        }
+    }, [tokenName, tokenSymbol, tokenSupply, decimals]);
 
     const handleCloseClick = () => setIsVisible(false);
 
@@ -120,11 +134,35 @@ const Services = () => {
                                 Mint your own Solana SPL Token!
                             </h3>
                             <ThemeProvider theme={theme}>
-                                <TextField label="Token Name" variant="outlined" fullWidth />
-                                <TextField label="Token Symbols" variant="outlined" fullWidth />
+                                <TextField
+                                    label="Token Name"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={tokenName}
+                                    onChange={(e) => setTokenName(e.target.value)}
+                                />
+                                <TextField
+                                    label="Token Symbols"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={tokenSymbol}
+                                    onChange={(e) => setTokenSymbol(e.target.value)}
+                                />
                                 <p className='text-[0.7rem] text-[#999999] -mt-3'>Total supply (excluding decimals e.g. 100 tokens)</p>
-                                <TextField label="Token Supply" variant="outlined" fullWidth />
-                                <TextField type="number" variant="outlined" fullWidth />
+                                <TextField
+                                    label="Token Supply"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={tokenSupply}
+                                    onChange={(e) => setTokenSupply(e.target.value)}
+                                />
+                                <TextField
+                                    type="number"
+                                    variant="outlined"
+                                    fullWidth
+                                    value={decimals}
+                                    onChange={(e) => setDecimals(e.target.value)}
+                                />
                                 <p className='text-[0.7rem] text-[#999999] -mt-3'>
                                     Decimals (18 recommended)
                                 </p>
@@ -167,14 +205,82 @@ const Services = () => {
                                     className={`w-full bg-[#1F1F1F] rounded-2xl p-2 mt-2 ${isCheckedAdjustable ? 'gradientborder' : ''}`}
                                     fullWidth
                                 />
-
                             </div>
-                            
+                            <div className='flex flex-row mt-3 gap-4'>
+                                <div className='flex flex-col gap-2'>
+                                    <label htmlFor="tax" className='text-sm font-bold '>Buy Tax</label>
+                                    <select name="tax" id="tax" className='w-56 h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div className='flex flex-col gap-2'>
+                                    <label htmlFor="selltax" className='text-sm font-bold '>Sell Tax</label>
+                                    <select name="selltax" id="selltax" className='w-56 h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='flex justify-between mt-4 '>
+                                <div className='flex flex-col items-start gap-2'>
+                                    <span className='text-sm text-[#999999]'>
+                                        Total supply (including decimals - raw amount)
+                                    </span>
+                                    <span className='text-lg text-[#aeaeae]'>
+                                        0
+                                    </span>
+                                </div>
+                                <div className='flex flex-col items-end gap-2'>
+                                    <span className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold'>
+                                        Fee: 1.5 SOL
+                                    </span>
+                                    <span className='text-[0.9rem] text-[#aeaeae]'>
+                                        + 0.2% total supply
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                className={`w-full py-4 flex items-center justify-center rounded-2xl my-4 hover:bg-[#1d1d25] ${isButtonDisabled ? 'bg-[#666666] cursor-not-allowed' : 'bg-custom-gradient'}`}
+                                disabled={isButtonDisabled}
+                            >
+                                <span className=' font-bold uppercase text-lg '>
+                                    Mint a new token
+                                </span>
+                            </button>
                         </div>
                     </div>
                     <div className="w-1/2 px-2">
-                        <div className="bg-[#141414] rounded-3xl  p-4">
-                            {/* Content of the second div */}
+                        <div className="bg-[#141414] rounded-3xl  p-8">
+                            <div className='flex flex-row justify-between'>
+                                <h1 className='text-lg font-bold '>
+                                    Your Token
+                                </h1>
+                                <span >
+                                    <CachedRoundedIcon />
+                                </span>
+                            </div>
+                            <div className='flex justify-start gap-1 flex-col mt-10'>
+                                <span className='text-sm text-[#9a9a9a]'>
+                                    You have not minted any SPL Token yet.
+                                </span><span className='text-sm text-[#9a9a9a]'> All Tokens generated by your account will be shown here.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
