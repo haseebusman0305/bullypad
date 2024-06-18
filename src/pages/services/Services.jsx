@@ -257,7 +257,7 @@ const Services = () => {
                                 </div>
                             </div>
                             <button
-                                className={`w-full py-4 flex items-center justify-center rounded-2xl my-4 hover:bg-[#1d1d25] mt-6 ${isButtonDisabled ? 'bg-[#666666] cursor-not-allowed' : 'bg-custom-gradient'}`}
+                                className={`w-full py-4 flex items-center justify-center rounded-2xl my-4 hover:bg-[#1d1d25] mt-6 ${isButtonDisabled ? 'bg-[#2a2a2a] cursor-not-allowed ' : 'bg-custom-gradient'}`}
                                 disabled={isButtonDisabled}
                             >
                                 <span className=' font-bold uppercase text-lg '>

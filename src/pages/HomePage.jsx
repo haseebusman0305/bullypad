@@ -4,7 +4,19 @@ import TokenIcon from '@mui/icons-material/Token';
 import LockIcon from '@mui/icons-material/Lock';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+import LaunchTable from './LaunchTable';
 import '../App.css';
+import { Link } from 'react-router-dom';
+
+function createData(Date, LaunchName, Audits, LiquidityLocks, Progress, Status) {
+    return { Date, LaunchName, Audits, LiquidityLocks, Progress, Status };
+}
+
+const rows = [
+    createData('9 Feb 2024', { name: 'JAMES', detail: 'JAMES/SOL', imageUrl: 'alpaca.png' }, ['Audited', 'KYC'], { lock: 'Forever', value: '60%' }, ['0/1400 SOL', '50%'], 'Upcoming'),
+];
 const HomePage = () => {
     return (
         <section className="flex flex-col py-8  px-8">
@@ -53,41 +65,48 @@ const HomePage = () => {
                 </div>
                 <div className='flex flex-col gap-5  w-[33%] mt-0  '>
                     <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
-                        <RocketLaunchIcon sx={{fontSize:'1.8rem'}} />
+                        <RocketLaunchIcon sx={{ fontSize: '1.8rem' }} />
                         <h1 className='text-lg font-bold'>
                             New Launches
                         </h1>
                     </button>
                     <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
-                        <TokenIcon sx={{fontSize:'1.8rem'}} />
+                        <TokenIcon sx={{ fontSize: '1.8rem' }} />
                         <h1 className='text-lg font-bold'>
-                        Token Minter
+                            Token Minter
                         </h1>
                     </button>
                     <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
-                        <LockIcon sx={{fontSize:'1.8rem'}} />
+                        <LockIcon sx={{ fontSize: '1.8rem' }} />
                         <h1 className='text-lg font-bold'>
-                        Token Locker 
-                        <span className='text-[12px]'>
-                          (Coming Soon)
+                            Token Locker
+                            <span className='text-[12px]'>
+                                (Coming Soon)
                             </span>
                         </h1>
                     </button>
                     <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
-                        <VpnKeyIcon sx={{fontSize:'1.8rem'}} />
+                        <VpnKeyIcon sx={{ fontSize: '1.8rem' }} />
                         <h1 className='text-lg font-bold'>
-                        Liquidity Locker
+                            Liquidity Locker
                         </h1>
                     </button>
                     <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
-                        <AddBoxOutlinedIcon sx={{fontSize:'1.8rem'}} />
+                        <AddBoxOutlinedIcon sx={{ fontSize: '1.8rem' }} />
                         <h1 className='text-lg font-bold'>
-                        Create Launches
+                            Create Launches
                         </h1>
                     </button>
 
                 </div>
             </div>
+            <div className='flex flex-col items-center'>
+                <LaunchTable rows={rows} />
+                <Link to={'/launches'} className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold w-fit text-xl mt-4'>
+                    View All <KeyboardArrowRightIcon/>
+                </Link>
+            </div>
+
         </section>
     );
 }
