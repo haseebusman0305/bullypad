@@ -4,7 +4,6 @@ import TokenIcon from '@mui/icons-material/Token';
 import LockIcon from '@mui/icons-material/Lock';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import LaunchTable from './LaunchTable';
 import '../App.css';
@@ -103,7 +102,7 @@ const HomePage = () => {
             <div className='flex flex-col items-center'>
                 <LaunchTable rows={rows} />
                 <Link to={'/launches'} className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold w-fit text-xl mt-4'>
-                    View All <KeyboardArrowRightIcon/>
+                    View All
                 </Link>
             </div>
 
