@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Launches from './pages/Launches';
+import Launches from './pages/services/Launches';
 import Services from './pages/services/Services';
 import Sidebar from './common/Sidebar';
 import Navigation from './common/Navigation';
 import Navbar from './common/Navbar';
 import Footer from './common/Footer';
+import Liquidity from './pages/services/Liquidity';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -37,6 +38,7 @@ function App() {
             <Route path="/launches" element={<Launches />} />
             <Route path="/services" element={<Services />} />
             <Route path="services/minter" element={<Services />} />
+            <Route path="services/liquidity" element={<Liquidity />} />
 
           </Routes>
           <Footer />

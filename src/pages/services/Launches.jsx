@@ -9,7 +9,7 @@ import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import LaunchTable from './LaunchTable';
+import LaunchTable from './LaunchTable.jsx';
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',

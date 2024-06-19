@@ -4,8 +4,9 @@ import TokenIcon from '@mui/icons-material/Token';
 import LockIcon from '@mui/icons-material/Lock';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 
-import LaunchTable from './LaunchTable';
+import LaunchTable from './services/LaunchTable';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
@@ -99,10 +100,11 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center bg-[#121212] rounded-3xl py-3 mt-8'>
                 <LaunchTable rows={rows} />
-                <Link to={'/launches'} className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold w-fit text-xl mt-4'>
+                <Link to={'/launches'} className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold w-fit text-[1.2rem] mt-4 flex items-center'>
                     View All
+                    <KeyboardArrowRightRoundedIcon  sx={{ fill: "url(#customGradient)",}}/>
                 </Link>
             </div>
 
