@@ -24,7 +24,7 @@ const Navbar = () => {
       </section>
       <section className="items-center flex gap-2">
         <button formTarget='_blanck' className="h-16 rounded-lg bg-[#141414] flex p-3 justify-center items-center gap-2 active:bg-[#0f0f0f] transition duration-150 ease-in-out">
-          <img className='w-5 h-auto flex-shrink-0' src="solana.png" alt="" />
+          <img className='w-5 h-auto flex-shrink-0' src="/solana.png" alt="" />
           <span className="text-base font-bold font-large leading-6">
             SOL
           </span>
@@ -34,7 +34,7 @@ const Navbar = () => {
             0 SOL
           </span>
           <button className=" px-6 h-10 rounded-lg bg-[#141414] flex p-3 justify-center items-center gap-3  hover:bg-slate-800 ">
-            <img className='w-6 h-auto flex-shrink-0 rounded' src="phantom_logo.png" alt="" />
+            <img className='w-6 h-auto flex-shrink-0 rounded' src="/phantom_logo.png" alt="" />
             <span className="text-base font-large font-bold  leading-6">
               Connect
             </span>
