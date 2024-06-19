@@ -8,6 +8,7 @@ import Navigation from './common/Navigation';
 import Navbar from './common/Navbar';
 import Footer from './common/Footer';
 import Liquidity from './pages/services/Liquidity';
+import Ilo from './pages/services/Ilo';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -37,8 +38,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/launches" element={<Launches />} />
             <Route path="/services" element={<Services />} />
-            <Route path="services/minter" element={<Services />} />
-            <Route path="services/liquidity" element={<Liquidity />} />
+            <Route path="/services/minter" element={<Services />} />
+            <Route path="/services/liquidity" element={<Liquidity />} />
+            <Route path="/services/ilo" element={<Ilo />} />
 
           </Routes>
           <Footer />

@@ -47,8 +47,9 @@ const HomePage = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className='w-[100%] mb-7'>
-                            <img className='w-full h-auto ' src="/trading.png" alt="" />
+                        <div className='w-[100%] my-7'>
+                            {/* <img className='w-full h-auto ' src="/trading.png" alt="" /> */}
+                            <iframe src="https://dexscreener.com/solana/SVe2Xh2vn91fRiWArcsZkNJZjf3jR3PLUCFHGEynT4C?embed=1&theme=dark&trades=0&info=0" scrolling="no" allowfullscreen width="100%" height="300"></iframe>
                         </div>
                         <div className='flex flex-row justify-between px-3 '>
 
