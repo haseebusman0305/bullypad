@@ -49,6 +49,7 @@ const Navigation = ({ isSidebarOpen }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [hoveredLink, setHoveredLink] = useState(null);
+  const [activeButton, setActiveButton] = useState('newLock');
 
   const pathStartsWith = (path, prefix) => path.startsWith(prefix);
 
@@ -70,6 +71,22 @@ const Navigation = ({ isSidebarOpen }) => {
             <h1 className='my-10 mx-4 text-white font-bold text-xl'>
               {heading}
             </h1>
+            {heading === 'Services' && (
+              <div className='flex flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
+                <button
+                  className={`uppercase w-[40%] h-full font-bold text-[0.8rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
+                  onClick={() => setActiveButton('newLock')}
+                >
+                 Investor
+                </button>
+                <button
+                  className={`uppercase w-[60%] font-bold text-[0.75rem] h-full rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
+                  onClick={() => setActiveButton('editWithdraw')}
+                >
+                  Owner & developer
+                </button>
+              </div>
+            )}
             <ul>
               {groupedLinks[heading].map((link) => (
                 <li key={link.path}>
