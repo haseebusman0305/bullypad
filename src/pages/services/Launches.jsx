@@ -81,12 +81,13 @@ const Launches = () => {
                 </FormControl>
             </div>
             <div className='flex flex-row gap-3 my-5'>
-                <div className='border rounded-md border-zinc-700 w-[74%] flex flex-row justify-between     pr-2 py-1 items-center   '>
+                <div className="border rounded-md border-zinc-700 w-3/4 flex flex-row justify-between pr-2 py-1 items-center min-w-0 overflow-hidden">
                     <StyledInputBase
                         placeholder="Search"
                         inputProps={{ 'aria-label': 'search' }}
+                        className="flex-shrink min-w-[50px] mr-2"
                     />
-                    <SearchIcon />
+                    <SearchIcon className="flex-shrink-0" />
                 </div>
                 <div className='flex flex-row gap-2  items-center '>
                     <span className='text-lg dont-bold '>
