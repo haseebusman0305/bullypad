@@ -72,20 +72,20 @@ const Navigation = ({ isSidebarOpen }) => {
               {heading}
             </h1>
             {heading === 'Services' && (
-              <div className='flex flex-wrap flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
-                <button
-                  className={`uppercase w-[40%] h-full font-bold text-[0.8rem] md:text-[0.75rem] sm:text-[0.7rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
-                  onClick={() => setActiveButton('newLock')}
-                >
-                 Investor
-                </button>
-                <button
-                  className={`uppercase w-[60%] font-bold text-[0.75rem] md:text-[0.7rem] sm:text-[0.65rem] h-full rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
-                  onClick={() => setActiveButton('editWithdraw')}
-                >
-                  Owner & developer
-                </button>
-              </div>
+ <div className='flex flex-wrap flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
+  <button
+    className={`uppercase w-[40%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
+    onClick={() => setActiveButton('newLock')}
+  >
+   Investor
+  </button>
+  <button
+    className={`uppercase w-[60%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
+    onClick={() => setActiveButton('editWithdraw')}
+  >
+    Owner & developer
+  </button>
+</div>
             )}
             <ul>
               {groupedLinks[heading].map((link) => (
