@@ -16,8 +16,8 @@ const Sidebar = ({ toggleSidebar }) => {
   };
 
   const iconStyle = (path) => ({
-    fontSize: "40px",
-    fill: location.pathname === path || location.pathname.startsWith(path + '/') ? "url(#customGradient)" : "white",
+    fontSize: "37px",
+    fill: location.pathname === path || location.pathname.startsWith(path + '/') ? "url(#customGradient)" : "#999999",
     '&:hover': {
       fill: "url(#customGradient)",
     },

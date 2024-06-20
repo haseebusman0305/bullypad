@@ -17,24 +17,25 @@ function createData(Date, LaunchName, Audits, LiquidityLocks, Progress, Status) 
 const rows = [
     createData('9 Feb 2024', { name: 'JAMES', detail: 'JAMES/SOL', imageUrl: 'alpaca.png' }, ['Audited', 'KYC'], { lock: 'Forever', value: '60%' }, ['0/1400 SOL', '50%'], 'Upcoming'),
 ];
+
 const HomePage = () => {
     return (
-        <section className="flex flex-col py-8  px-8">
-            <h1 className="px-1 py-7 font-bold text-4xl ">
+        <section className="flex flex-col py-8 px-4 lg:px-8">
+            <h1 className="px-1 py-7 font-bold text-3xl ">
                 DASHBOARD
             </h1>
-            <div className='flex flex-row gap-4'>
-                <div className="flex flex-row gap-6 bg-[#141414]  min-h-[28rem] w-[65%] rounded-2xl p-6">
+            <div className='flex flex-col lg:flex-row flex-wrap gap-4'>
+                <div className="flex flex-col lg:flex-row gap-6 bg-[#141414] min-h-[28rem] w-full lg:w-[65%] rounded-2xl p-6">
                     <div className="flex flex-col w-full">
-                        <div className="flex flex-row justify-between items-center ">
+                        <div className="flex flex-row flex-wrap justify-between items-center ">
                             <div className="flex flex-row justify-start items-center gap-2">
                                 <img className="w-10 h-auto mx-2" src="/logo_bull.png" alt="" />
                                 <h2 className="text-md font-bold">
                                     BULLY
                                 </h2>
                             </div>
-                            <div className="flex flex-row items-center gap-2">
-                                <h2 className="text-lg">
+                            <div className="flex flex-row flex-wrap items-center gap-2">
+                                <h2 className="text-[1.05rem]">
                                     Buy BULLY on
                                 </h2>
                                 <button className="flex flex-row text-sm items-center gap-2 bg-[#272727] p-2 rounded-3xl ">
@@ -47,68 +48,62 @@ const HomePage = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className='w-[100%] my-7'>
-                            {/* <img className='w-full h-auto ' src="/trading.png" alt="" /> */}
-                            <iframe src="https://dexscreener.com/solana/SVe2Xh2vn91fRiWArcsZkNJZjf3jR3PLUCFHGEynT4C?embed=1&theme=dark&trades=0&info=0" scrolling="no" allowfullscreen width="100%" height="300"></iframe>
+                        <div className='w-full my-7'>
+                            <iframe src="https://dexscreener.com/solana/SVe2Xh2vn91fRiWArcsZkNJZjf3jR3PLUCFHGEynT4C?embed=1&theme=dark&trades=0&info=0" scrolling="no" allowFullScreen width="100%" height="300"></iframe>
                         </div>
-                        <div className='flex flex-row justify-between px-3 '>
-
-                            <button className="flex flex-row text-sm items-center gradientborder   gap-2 bg-[#272727] p-2 rounded-3xl ">
+                        <div className='flex flex-row flex-wrap justify-between px-3 '>
+                            <button className="flex flex-row text-sm items-center gradientborder gap-2 bg-[#272727] p-2 rounded-3xl ">
                                 BULLY|0.0000234$
                             </button>
-
                             <span className='text-[1rem]'>
                                 Charts by TradingView
                             </span>
                         </div>
-
                     </div>
                 </div>
-                <div className='flex flex-col gap-5  w-[33%] mt-0  '>
-                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                <div className='flex flex-col gap-5 w-full lg:w-[33%] mt-0 '>
+                    <button className='bg-[#141414] w-full border-none flex flex-row items-start gap-4 pl-6 py-5 rounded-2xl'>
                         <RocketLaunchIcon sx={{ fontSize: '1.8rem' }} />
-                        <h1 className='text-lg font-bold'>
+                        <h1 className='text-[1.05rem] font-bold'>
                             New Launches
                         </h1>
                     </button>
-                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                    <button className='bg-[#141414] w-full border-none flex flex-row items-start gap-4 pl-6 py-5 rounded-2xl'>
                         <TokenIcon sx={{ fontSize: '1.8rem' }} />
-                        <h1 className='text-lg font-bold'>
+                        <h1 className='text-[1.05rem] font-bold'>
                             Token Minter
                         </h1>
                     </button>
-                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                    <button className='bg-[#141414] w-full border-none flex flex-row items-start gap-4 pl-6 py-5 rounded-2xl'>
                         <LockIcon sx={{ fontSize: '1.8rem' }} />
-                        <h1 className='text-lg font-bold'>
+                        <h1 className='text-[1.05rem] font-bold'>
                             Token Locker
                             <span className='text-[12px]'>
                                 (Coming Soon)
                             </span>
                         </h1>
                     </button>
-                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                    <button className='bg-[#141414] w-full border-none flex flex-row items-start gap-4 pl-6 py-5 rounded-2xl'>
                         <VpnKeyIcon sx={{ fontSize: '1.8rem' }} />
-                        <h1 className='text-lg font-bold'>
+                        <h1 className='text-[1.05rem] font-bold'>
                             Liquidity Locker
                         </h1>
                     </button>
-                    <button className='bg-[#141414] w-full  border-none flex flex-row items-start gap-4 pl-6     py-5 rounded-2xl'>
+                    <button className='bg-[#141414] w-full border-none flex flex-row items-start gap-4 pl-6 py-5 rounded-2xl'>
                         <AddBoxOutlinedIcon sx={{ fontSize: '1.8rem' }} />
-                        <h1 className='text-lg font-bold'>
+                        <h1 className='text-[1.05rem] font-bold'>
                             Create Launches
                         </h1>
                     </button>
-
                 </div>
             </div>
             <div className='flex flex-col items-center bg-[#121212] rounded-3xl py-3 mt-8'>
                 <LaunchTable rows={rows} />
                 <Link to={'/launches'} className='bg-custom-gradient text-fill-transparent bg-clip-text font-bold w-fit text-[1.2rem] mt-4 flex items-center'>
                     View All
-                    <KeyboardArrowRightRoundedIcon  sx={{ fill: "url(#customGradient)",}}/>
+                    <KeyboardArrowRightRoundedIcon sx={{ fill: "url(#customGradient)", }} />
                 </Link>
             </div>
-
         </section>
     );
 }

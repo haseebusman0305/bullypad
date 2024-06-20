@@ -18,7 +18,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
-
         [theme.breakpoints.up('md')]: {
             width: '80ch',
         },
@@ -42,17 +41,17 @@ const Launches = () => {
     };
 
     return (
-        <section className='px-8 p-7 font-bold text-4xl'>
-            <h1 className="pl-10 py-5 font-bold text-4xl">
+        <section className='px-4 sm:px-8 py-4 sm:py-7'>
+            <h1 className="pl-2 sm:pl-10 py-3 sm:py-5 font-bold text-2xl sm:text-3xl">
                 LAUNCHES
             </h1>
-            <div className='flex flex-row justify-start items-end gap-3 px-7 py-4 border border-zinc-900 rounded-3xl w-fit'>
-                <img src="/radium.png" className='w-5 h-auto' alt="radium" />
-                <FormControl className='w-56 h-10 border-none bg-black'>
+            <div className='flex flex-row justify-start items-end gap-2 sm:gap-3 px-3 sm:px-7 py-2 sm:py-4 border border-zinc-900 rounded-xl sm:rounded-3xl w-fit'>
+                <img src="/radium.png" className='w-4 sm:w-5 h-auto' alt="radium" />
+                <FormControl className='w-40 sm:w-56 h-8 sm:h-10 border-none bg-black'>
                     <InputLabel
                         variant="standard"
                         htmlFor="uncontrolled-native"
-                        sx={{ color: 'gray' }}
+                        sx={{ color: 'gray', fontSize: '0.8rem', sm: { fontSize: '1rem' } }}
                     >
                         Select Exchange
                     </InputLabel>
@@ -63,15 +62,11 @@ const Launches = () => {
                         }}
                         sx={{
                             color: 'white',
-                            '&:before': {
-                                borderBottomColor: 'transparent',
-                            },
-                            '&:after': {
-                                borderBottomColor: 'transparent',
-                            },
-                            '& .MuiNativeSelect-icon': {
-                                color: 'white',
-                            },
+                            fontSize: '0.8rem',
+                            sm: { fontSize: '1rem' },
+                            '&:before': { borderBottomColor: 'transparent' },
+                            '&:after': { borderBottomColor: 'transparent' },
+                            '& .MuiNativeSelect-icon': { color: 'white' },
                         }}
                     >
                         <option value='Raydium' className='text-blue-500 bg-black'>
@@ -80,8 +75,8 @@ const Launches = () => {
                     </NativeSelect>
                 </FormControl>
             </div>
-            <div className='flex flex-row gap-3 my-5'>
-                <div className="border rounded-md border-zinc-700 w-3/4 flex flex-row justify-between pr-2 py-1 items-center min-w-0 overflow-hidden">
+            <div className='flex flex-col sm:flex-row gap-3 my-3 sm:my-5'>
+                <div className="border rounded-md border-zinc-700 w-full sm:w-3/4 flex flex-row justify-between pr-2 py-1 items-center min-w-0 overflow-hidden">
                     <StyledInputBase
                         placeholder="Search"
                         inputProps={{ 'aria-label': 'search' }}
@@ -89,11 +84,10 @@ const Launches = () => {
                     />
                     <SearchIcon className="flex-shrink-0" />
                 </div>
-                <div className='flex flex-row gap-2  items-center '>
-                    <span className='text-lg dont-bold '>
+                <div className='flex flex-row gap-2 items-center justify-between sm:justify-start'>
+                    <span className='text-sm sm:text-lg font-bold'>
                         Sort By:
                     </span>
-
                     <FormControl>
                         <Select
                             value={selectedValue}
@@ -102,16 +96,11 @@ const Launches = () => {
                                 color: 'white',
                                 backgroundColor: '#141414',
                                 borderRadius: "2rem",
-                                fontSize: '1rem',
-                                '& .MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                },
-                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                }
+                                fontSize: '0.8rem',
+                                sm: { fontSize: '1rem' },
+                                '& .MuiOutlinedInput-notchedOutline': { border: 'none' },
+                                '&:hover .MuiOutlinedInput-notchedOutline': { border: 'none' },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': { border: 'none' }
                             }}
                             MenuProps={{
                                 PaperProps: {
@@ -122,9 +111,9 @@ const Launches = () => {
                                 }
                             }}
                         >
-                            <MenuItem value={10} sx={{ color: 'white', fontSize: '0.9rem', backgroundColor: '#141414' }}><CheckCircleOutlinedIcon fontSize='' /> All</MenuItem>
-                            <MenuItem value={20} sx={{ color: 'white', fontSize: '0.9rem', backgroundColor: '#141414' }}><CheckCircleOutlinedIcon fontSize='' /> Audit only</MenuItem>
-                            <MenuItem value={30} sx={{ color: 'white', fontSize: '0.9rem', backgroundColor: '#141414' }}><ShieldOutlinedIcon fontSize='' /> KYC</MenuItem>
+                            <MenuItem value={10} sx={{ color: 'white', fontSize: '0.8rem', sm: { fontSize: '0.9rem' }, backgroundColor: '#141414' }}><CheckCircleOutlinedIcon fontSize='small' /> All</MenuItem>
+                            <MenuItem value={20} sx={{ color: 'white', fontSize: '0.8rem', sm: { fontSize: '0.9rem' }, backgroundColor: '#141414' }}><CheckCircleOutlinedIcon fontSize='small' /> Audit only</MenuItem>
+                            <MenuItem value={30} sx={{ color: 'white', fontSize: '0.8rem', sm: { fontSize: '0.9rem' }, backgroundColor: '#141414' }}><ShieldOutlinedIcon fontSize='small' /> KYC</MenuItem>
                         </Select>
                     </FormControl>
                 </div>

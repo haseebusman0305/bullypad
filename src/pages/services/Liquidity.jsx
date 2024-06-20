@@ -3,7 +3,7 @@ import NativeSelect from '@mui/material/NativeSelect';
 import InputLabel from '@mui/material/InputLabel';
 import { Link } from 'react-router-dom';
 import FormControl from '@mui/material/FormControl';
-import { TextField, ThemeProvider, createTheme } from '@mui/material';
+import { TextField, ThemeProvider, createTheme, Grid } from '@mui/material';
 import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
 
 const theme = createTheme({
@@ -52,17 +52,17 @@ const theme = createTheme({
 export default function Liquidity() {
     const [activeButton, setActiveButton] = useState('newLock');
     const [border, setBorder] = useState(false);
-    const [showPairs, setShowPairs] = useState(false); // State to control visibility of the lower div
+    const [showPairs, setShowPairs] = useState(false);
 
     return (
         <div className='px-8 p-7'>
-            <h1 className=" py-5 font-bold text-4xl">
+            <h1 className=" py-5 font-bold text-3xl">
                 Liquidity Locker
             </h1>
-            <div className='flex flex-row gap-3'>
-                <div className='flex flex-row justify-start items-end gap-3 px-7 py-3  border border-zinc-900 rounded-3xl w-fit'>
+            <div className='flex flex-wrap gap-3'>
+                <div className='flex flex-row justify-start items-end gap-3 px-7 py-3  border border-zinc-900 rounded-3xl w-full md:w-fit'>
                     <img src="/radium.png" className='w-5 h-auto' alt="radium" />
-                    <FormControl className='w-56 h-10 border-none bg-black'>
+                    <FormControl className='w-full md:w-56 h-10 border-none bg-black'>
                         <InputLabel
                             variant="standard"
                             htmlFor="uncontrolled-native"
@@ -94,7 +94,7 @@ export default function Liquidity() {
                         </NativeSelect>
                     </FormControl>
                 </div>
-                <div className='flex flex-row gap-0 h-16 p-2 w-96 ml-6 bg-[#121212] rounded-2xl'>
+                <div className='flex flex-row gap-0 h-16 p-2 w-full md:w-96 ml-0 md:ml-6 bg-[#121212] rounded-2xl'>
                     <button
                         className={`uppercase w-[40%] h-full rounded-xl font-bold  text-[0.9rem] ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
                         onClick={() => setActiveButton('newLock')}
@@ -109,7 +109,7 @@ export default function Liquidity() {
                     </button>
                 </div>
             </div>
-            <div className='w-[75%] bg-[#121212] my-8 rounded-2xl p-6'>
+            <div className='w-full md:w-[75%] bg-[#121212] my-8 rounded-2xl p-6'>
                 <h3 className='py-1 font-bold text-[1rem] '>
                     Enter the Raydium pairs address you’d like to lock liquidity for
                 </h3>

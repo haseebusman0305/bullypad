@@ -64,23 +64,23 @@ const Navigation = ({ isSidebarOpen }) => {
   }, {});
 
   return (
-    <div className={`sticky top-0 z-10 md:z-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen  py-8`}>
+    <div className={`sticky top-0  md:z-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen py-8`}>
       <div className={`transition-opacity duration-200 mx-3 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`}>
         {Object.keys(groupedLinks).map(heading => (
           <div key={heading}>
-            <h1 className='my-10 mx-4 text-white font-bold text-xl'>
+            <h1 className='my-10 mx-4 text-white font-bold text-xl md:text-lg sm:text-base'>
               {heading}
             </h1>
             {heading === 'Services' && (
-              <div className='flex flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
+              <div className='flex flex-wrap flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
                 <button
-                  className={`uppercase w-[40%] h-full font-bold text-[0.8rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
+                  className={`uppercase w-[40%] h-full font-bold text-[0.8rem] md:text-[0.75rem] sm:text-[0.7rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
                   onClick={() => setActiveButton('newLock')}
                 >
                  Investor
                 </button>
                 <button
-                  className={`uppercase w-[60%] font-bold text-[0.75rem] h-full rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
+                  className={`uppercase w-[60%] font-bold text-[0.75rem] md:text-[0.7rem] sm:text-[0.65rem] h-full rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
                   onClick={() => setActiveButton('editWithdraw')}
                 >
                   Owner & developer
@@ -92,16 +92,16 @@ const Navigation = ({ isSidebarOpen }) => {
                 <li key={link.path}>
                   <NavLink
                     to={link.path}
-                    className={`inline-flex items-center px-2 text-white hover:bg-[#201f1f]  w-full py-3 my-1 rounded-md ${link.disabled ? 'opacity-50 cursor-default' : ''}`}
+                    className={`inline-flex items-center px-2 text-white hover:bg-[#201f1f] w-full py-3 my-1 rounded-md ${link.disabled ? 'opacity-50 cursor-default' : ''}`}
                     style={{ pointerEvents: link.disabled ? 'none' : 'auto' }}
                     onMouseEnter={() => setHoveredLink(link.path)}
                     onMouseLeave={() => setHoveredLink(null)}
                   >
                     {applyGradientFill(link.icon, link.path === currentPath || link.path === hoveredLink)}
-                    <span className='pl-2 text-sm font-bold'>
+                    <span className='pl-2 text-sm md:text-xs sm:text-[0.75rem] font-bold'>
                       {link.label}
                       {link.disabled && (
-                        <span className='text-xs opacity-50 pl-1'>
+                        <span className='text-xs md:text-[0.65rem] sm:text-[0.6rem] opacity-50 pl-1'>
                           (COMING SOON)
                         </span>
                       )}

@@ -103,12 +103,12 @@ const Services = () => {
     };
 
     return (
-        <div className='mx-9'>
-            <h1 className="px-1 py-7 font-bold text-4xl ">
+        <div className='mx-4 lg:mx-9'>
+            <h1 className="px-1 py-7 font-bold text-3xl ">
                 Token Minter
             </h1>
             {isVisible && (
-                <div className='px-9 py-4 gradientborder rounded-2xl flex justify-between items-start'>
+                <div className='px-4 py-4 lg:px-9 gradientborder rounded-2xl flex justify-between items-start'>
                     <p className="text-sm py-10 text-[#ADADAD] flex-1">
                         Our tokens are fully SPL compliant Non-Mintable Tokens. Use the Bullypad Token factory to mint your very own token at the click of a button. Your Bullypad token will be shown favourably in the Bullypad browser and bypass the need for an audit on the token contract itself, as well as when using our ILO dapp. Anyone can query our token mint factory with your token address to see your new token is a valid, safe, and SPL compliant token.
                     </p>
@@ -119,7 +119,7 @@ const Services = () => {
                 <h3 className='py-5 font-bold text-lg mt-5'>
                     SPL compliant Non-Mintable Tokens Specs
                 </h3>
-                <div className='grid grid-cols-2 gap-5 mt-1'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-1 flex-wrap '>
                     {Items.map((item, index) => (
                         <div key={index} className='flex flex-row gap-3 items-center'>
                             <CheckCircleOutlineRoundedIcon className='text-[#1EBEA5] ' />
@@ -128,8 +128,8 @@ const Services = () => {
                     ))}
                 </div>
                 <div className="flex flex-wrap -mx-2 mt-8">
-                    <div className="w-1/2 px-2 PY-0">
-                        <div className="bg-[#141414] rounded-3xl   px-8 py-4">
+                    <div className="w-full md:w-1/2 px-2 py-0">
+                        <div className="bg-[#141414] rounded-3xl px-8 py-4">
                             <h3 className='py-1 font-bold text-lg '>
                                 Mint your own Solana SPL Token!
                             </h3>
@@ -206,10 +206,10 @@ const Services = () => {
                                     fullWidth
                                 />
                             </div>
-                            <div className='flex flex-row mt-5 gap-4'>
-                                <div className='flex flex-col gap-2'>
+                            <div className='flex flex-wrap gap-4 mt-5'>
+                                <div className='flex flex-col gap-2 w-full sm:w-[48%]'>
                                     <label htmlFor="tax" className='text-sm font-bold '>Buy Tax</label>
-                                    <select name="tax" id="tax" className='w-56 h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
+                                    <select name="tax" id="tax" className='w-full h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -222,9 +222,9 @@ const Services = () => {
                                         <option value="10">10</option>
                                     </select>
                                 </div>
-                                <div className='flex flex-col gap-2'>
+                                <div className='flex flex-col gap-2 w-full sm:w-[48%]'>
                                     <label htmlFor="selltax" className='text-sm font-bold '>Sell Tax</label>
-                                    <select name="selltax" id="selltax" className='w-56 h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
+                                    <select name="selltax" id="selltax" className='w-full h-12 rounded-xl p-2 text-white bg-[#1f1e1e]'>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -266,8 +266,8 @@ const Services = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-1/2 px-2">
-                        <div className="bg-[#141414] rounded-3xl  p-8">
+                    <div className="w-full md:w-1/2 px-2 mt-6 md:mt-0">
+                        <div className="bg-[#141414] rounded-3xl p-8">
                             <div className='flex flex-row justify-between'>
                                 <h1 className='text-lg font-bold '>
                                     Your Token
