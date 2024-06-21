@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -45,11 +45,23 @@ const applyGradientFill = (icon, isActive) => {
   });
 };
 
-const Navigation = ({ isSidebarOpen }) => {
+const Navigation = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [hoveredLink, setHoveredLink] = useState(null);
   const [activeButton, setActiveButton] = useState('newLock');
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768); 
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const pathStartsWith = (path, prefix) => path.startsWith(prefix);
 
@@ -63,8 +75,18 @@ const Navigation = ({ isSidebarOpen }) => {
     return groups;
   }, {});
 
+  const handleLinkClick = () => {
+    if (isSmallScreen) {
+      toggleSidebar();
+    }
+  };
+
   return (
-    <div className={`sticky top-0 bg-[#121212] transition-all duration-300 ${isSidebarOpen ? 'md:w-72 w-56' : 'w-0'} bg-[#151414] border-r border-zinc-800 h-screen pt-8`}>
+    <div className={`
+  md:sticky fixed top-0  left-[3.51rem]  h-screen bg-[#121212] transition-all duration-300 md:z-0 z-50 ${isSidebarOpen ? 'md:w-72 w-56' : 'w-0'}
+  md:shadow-none shadow-lg
+  bg-[#151414] border-r border-zinc-800 overflow-y-auto
+`}>
       <div className={`transition-opacity duration-200 mx-3 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`}>
         {Object.keys(groupedLinks).map(heading => (
           <div key={heading}>
@@ -72,20 +94,20 @@ const Navigation = ({ isSidebarOpen }) => {
               {heading}
             </h1>
             {heading === 'Services' && (
- <div className='flex flex-wrap flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
-  <button
-    className={`uppercase w-[40%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
-    onClick={() => setActiveButton('newLock')}
-  >
-   Investor
-  </button>
-  <button
-    className={`uppercase w-[60%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
-    onClick={() => setActiveButton('editWithdraw')}
-  >
-    Owner & developer
-  </button>
-</div>
+              <div className='flex flex-wrap flex-row gap-0 h-12 p-[0.4rem] w-full bg-[#262626] rounded-xl'>
+                <button
+                  className={`uppercase w-[40%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
+                  onClick={() => setActiveButton('newLock')}
+                >
+                  Investor
+                </button>
+                <button
+                  className={`uppercase w-[60%] h-full font-bold md:text-[0.75rem] text-[0.65rem] rounded-lg text-white ${activeButton === 'editWithdraw' ? 'bg-custom-gradient' : ''}`}
+                  onClick={() => setActiveButton('editWithdraw')}
+                >
+                  Owner & developer
+                </button>
+              </div>
             )}
             <ul>
               {groupedLinks[heading].map((link) => (
@@ -96,6 +118,7 @@ const Navigation = ({ isSidebarOpen }) => {
                     style={{ pointerEvents: link.disabled ? 'none' : 'auto' }}
                     onMouseEnter={() => setHoveredLink(link.path)}
                     onMouseLeave={() => setHoveredLink(null)}
+                    onClick={handleLinkClick}
                   >
                     {applyGradientFill(link.icon, link.path === currentPath || link.path === hoveredLink)}
                     <span className='pl-2 text-sm md:text-xs sm:text-[0.75rem] font-bold'>

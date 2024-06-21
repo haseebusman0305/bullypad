@@ -94,7 +94,7 @@ export default function Liquidity() {
                         </NativeSelect>
                     </FormControl>
                 </div>
-                <div className='flex flex-row gap-0 h-16 p-2 w-full md:w-96 ml-0 md:ml-6 bg-[#121212] rounded-2xl'>
+                <div className='flex flex-row gap-[0.3rem] h-16 p-2 w-full md:w-96 ml-0 md:ml-6 bg-[#121212] rounded-2xl'>
                     <button
                         className={`uppercase w-[40%] h-full rounded-xl font-bold  text-[0.9rem] ${activeButton === 'newLock' ? 'bg-custom-gradient' : ''}`}
                         onClick={() => setActiveButton('newLock')}
