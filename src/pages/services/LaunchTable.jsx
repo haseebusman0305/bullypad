@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const LaunchTable = ({ rows }) => {
     return (
         <div className='w-full overflow-x-auto'>
-            <Link to={'/launches/james'}>
+            <Link to={'#'}>
                 <TableContainer component={Paper} sx={{
                     backgroundColor: '#121212',
                     borderRadius: { xs: '0.5rem', sm: '1rem', md: '1.5rem' },
