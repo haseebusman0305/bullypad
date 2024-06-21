@@ -24,7 +24,7 @@ const Sidebar = ({ toggleSidebar }) => {
   });
 
   return (
-    <div className="w-20 sticky top-0 bg-[#121212] h-screen flex flex-col items-center border-r border-zinc-800">
+    <div className="md:w-20 w-14 sticky top-0 bg-[#121212] h-screen flex flex-col items-center border-r border-zinc-800">
       <div>
         <button className="text-white p-2 mt-2" onClick={toggleSidebar}>
           <MenuIcon />

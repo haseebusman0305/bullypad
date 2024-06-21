@@ -31,7 +31,7 @@ const Ilo = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className='px-4 sm:px-8 py-5 flex flex-wrap flex-col'>
-                <h1 className="py-3 sm:py-5 font-bold text-2xl sm:text-3xl">
+                <h1 className="py-3 sm:py-5 font-bold text-2xl md:text-3xl">
                     Create Initial Liquidity Offering (ILO)
                 </h1>
                 <div className='flex flex-row justify-start items-end gap-3 px-4 sm:px-7 py-2 sm:py-3 border border-zinc-900 rounded-3xl w-full sm:w-fit'>

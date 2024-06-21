@@ -21,7 +21,7 @@ const rows = [
 const HomePage = () => {
     return (
         <section className="flex flex-col py-8 px-4 lg:px-8">
-            <h1 className="px-1 py-7 font-bold text-3xl ">
+            <h1 className="px-1 py-7 font-bold md:text-3xl text-2xl ">
                 DASHBOARD
             </h1>
             <div className='flex flex-col lg:flex-row flex-wrap gap-4'>

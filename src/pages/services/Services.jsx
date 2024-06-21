@@ -104,7 +104,7 @@ const Services = () => {
 
     return (
         <div className='mx-4 lg:mx-9'>
-            <h1 className="px-1 py-7 font-bold text-3xl ">
+            <h1 className="px-1 py-7 font-bold md:text-3xl text-2xl ">
                 Token Minter
             </h1>
             {isVisible && (

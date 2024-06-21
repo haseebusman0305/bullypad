@@ -42,7 +42,7 @@ const Launches = () => {
 
     return (
         <section className='px-4 sm:px-8 py-4 sm:py-7'>
-            <h1 className="pl-2 sm:pl-10 py-3 sm:py-5 font-bold text-2xl sm:text-3xl">
+            <h1 className="pl-2 sm:pl-10 py-3 sm:py-5 font-bold md:text-3xl text-2xl">
                 LAUNCHES
             </h1>
             <div className='flex flex-row justify-start items-end gap-2 sm:gap-3 px-3 sm:px-7 py-2 sm:py-4 border border-zinc-900 rounded-xl sm:rounded-3xl w-fit'>

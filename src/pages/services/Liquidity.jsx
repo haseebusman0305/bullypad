@@ -56,7 +56,7 @@ export default function Liquidity() {
 
     return (
         <div className='px-8 p-7'>
-            <h1 className=" py-5 font-bold text-3xl">
+            <h1 className=" py-5 font-bold md:text-3xl  text-2xl">
                 Liquidity Locker
             </h1>
             <div className='flex flex-wrap gap-3'>
@@ -119,8 +119,7 @@ export default function Liquidity() {
                         variant="outlined"
                         fullWidth
                     />
-                    <p className='text-[0.8rem] text-[#999999] ml-4 -mt-3'>e.g. 0xc70bb2736e218861dca818d1e9f7a1930fe61e5b</p>
-                </ThemeProvider>
+<p className='text-[0.8rem] text-[#999999] ml-4 -mt-3 break-words whitespace-normal'>e.g. 0xc70bb2736e218861dca818d1e9f7a1930fe61e5b</p>                </ThemeProvider>
 
                 {!showPairs && (
                     <Link

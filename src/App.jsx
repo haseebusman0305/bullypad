@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Launches from './pages/services/Launches';
@@ -11,7 +11,16 @@ import Liquidity from './pages/services/Liquidity';
 import Ilo from './pages/services/Ilo';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSidebarOpen(window.innerWidth >= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -32,7 +41,7 @@ function App() {
         </svg>
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <Navigation isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={`flex-1 bg-customGray text-white transition-all duration-300 overflow-y-auto`}>
+        <div className={`flex-1 bg-customGray text-white transition-all duration-300 overflow-y-auto md:z-0 z-[-1]`}>
           <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
           <Routes>
             <Route path="/" element={<HomePage />} />
