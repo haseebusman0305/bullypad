@@ -240,7 +240,7 @@ const Services = () => {
                             </div>
                             <div className='flex justify-between mt-7 '>
                                 <div className='flex flex-col items-start gap-2'>
-                                    <span className='text-sm text-[#999999]'>
+                                    <span className='text-sm text-[#999999] break-words whitespace-normal'>
                                         Total supply (including decimals - raw amount)
                                     </span>
                                     <span className='text-lg text-[#aeaeae]'>

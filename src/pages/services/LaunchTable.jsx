@@ -22,7 +22,7 @@ const LaunchTable = ({ rows }) => {
                     marginTop: '1rem'
                 }}>
                     <Table sx={{
-                        minWidth: '100%',
+                        minWidth: '25rem',
                         backgroundColor: '#121212',
                         color: 'white',
                         border: 0

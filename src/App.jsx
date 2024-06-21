@@ -41,7 +41,7 @@ function App() {
         </svg>
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <Navigation isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={`flex-1 bg-customGray text-white transition-all duration-300 overflow-y-auto md:z-0 z-[-1]`}>
+        <div className={`flex-1 bg-customGray text-white transition-all duration-300 overflow-y-auto `}>
           <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
           <Routes>
             <Route path="/" element={<HomePage />} />
